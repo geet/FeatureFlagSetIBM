@@ -32,7 +32,7 @@ spec:
                 - appservice-cdintegration
             topologyKey: kubernetes.io/hostname
       containers:
-      - image: geetmanghnani/ghzrental:v5
+      - image: geetmanghnani/ghzrentalapp:v5
         imagePullPolicy: IfNotPresent
         name: devx-appservice-cdintegration
         ports:
