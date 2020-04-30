@@ -32,7 +32,7 @@ spec:
                 - appservice-cdintegration
             topologyKey: kubernetes.io/hostname
       containers:
-      - image: us.icr.io/appsvcsamples/tektondeploy:latest
+      - image: us.icr.io/appdev/tektondeploy:latest
         imagePullPolicy: IfNotPresent
         name: devx-appservice-cdintegration
         ports:
