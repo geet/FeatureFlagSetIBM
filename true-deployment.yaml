@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: devx-appservice-cdintegration
-  namespace: appservice
+  namespace: default
 spec:
   minReadySeconds: 60
   progressDeadlineSeconds: 900
@@ -32,7 +32,7 @@ spec:
                 - appservice-cdintegration
             topologyKey: kubernetes.io/hostname
       containers:
-      - image: geetmanghnani/ghzrentalapp:v7
+      - image: us.icr.io/appsvcsamples/tektondeploy:4
         imagePullPolicy: IfNotPresent
         name: devx-appservice-cdintegration
         ports:
@@ -46,7 +46,7 @@ spec:
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       imagePullSecrets:
-      - name: appservice-secret
+      - name: default-us-icr-io
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
