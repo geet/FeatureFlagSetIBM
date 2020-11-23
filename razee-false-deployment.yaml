@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: razee-hello-world
+  labels:
+    razee: hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      razee: hello-world
+  template:
+    metadata:
+      labels:
+        razee: hello-world
+    spec:
+      containers:
+      - name: razee-hello-world
+        image: geetmanghnani/razee-hello-world:0.0.3
+        ports:
+          - containerPort: 3000
+            protocol: TCP
+        env:
+          - name: FEATURE
+            value: "false"
