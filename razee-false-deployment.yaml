@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: razee-hello-world
+  name: appconfig-mobile-recharge
   labels:
-    razee: hello-world
+    appconfig: mobile-recharge
 spec:
   replicas: 1
   selector:
     matchLabels:
-      razee: hello-world
+      appconfig: mobile-recharge
   template:
     metadata:
       labels:
-        razee: hello-world
+        appconfig: mobile-recharge
     spec:
       containers:
-      - name: razee-hello-world
-        image: geetmanghnani/razee-hello-world:0.0.3
+      - name: appconfig-mobile-recharge
+        image: geetmanghnani/appconfig-mobile-recharge:0.0.3
         ports:
           - containerPort: 3000
             protocol: TCP
         env:
-          - name: FEATURE
+          - name: MOBILE_RECHARGE
             value: "false"
